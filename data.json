@@ -1,0 +1,60 @@
+{
+  "patterns": [
+    {
+      "id": 1,
+      "name": "밴쿠버 가디건",
+      "author": "바늘이야기",
+      "image": "images/도안1.jpg",
+      "category": "대바늘"
+    },
+    {
+      "id": 2,
+      "name": "츄러스 가디건",
+      "author": "보송",
+      "image": "images/도안2.jpg",
+      "category": "대바늘"
+    },
+    {
+      "id": 3,
+      "name": "오펠리아 블라우스",
+      "author": "Tarama Jordan",
+      "image": "images/도안3.jpg",
+      "category": "대바늘"
+    },
+    {
+      "id": 4,
+      "name": "레인드롭 티",
+      "author": "솜솜뜨개",
+      "image": "images/도안4.jpg",
+      "category": "대바늘"
+    },
+    {
+      "id": 5,
+      "name": "시나몬 코위찬",
+      "author": "호호수",
+      "image": "images/도안5.jpg",
+      "category": "대바늘"
+    },
+    {
+      "id": 6,
+      "name": "크리스마스 리본 드레스",
+      "author": "보송",
+      "image": "images/도안6.jpg",
+      "category": "대바늘"
+    },
+    {
+      "id": 7,
+      "name": "하이소프트 체커보드 숄더백",
+      "author": "바늘이야기",
+      "image": "images/도안7.jpg",
+      "category": "코바늘"
+    },
+    {
+      "id": 8,
+      "name": "모티브 셔츠 가디건",
+      "author": "뜨개사계절",
+      "image": "images/도안8.jpg",
+      "category": "코바늘"
+    }
+  ]
+}

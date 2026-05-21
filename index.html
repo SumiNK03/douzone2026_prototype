@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knitching</title>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <img src="images/logo.svg" alt="로고" class="logo-icon">
+                <span>Knitching</span>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active"><a href="#"><img src="images/둘러보기.svg" alt="둘러보기" class="nav-icon"> 둘러보기</a></li>
+                    <li><a href="#"><img src="images/학습 중인 과정.svg" alt="학습 중인 과정" class="nav-icon"> 학습 중인 과정</a></li>
+                    <li><a href="#"><img src="images/도안 - 대바늘.svg" alt="도안-대바늘" class="nav-icon"> 도안-대바늘</a></li>
+                    <li><a href="#"><img src="images/도안 - 코바늘.svg" alt="도안-코바늘" class="nav-icon"> 도안-코바늘</a></li>
+                    <li><a href="#"><img src="images/설정.svg" alt="설정" class="nav-icon"> 설정</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <div class="main-content">
+            
+            <header class="top-bar">
+                <div></div>
+                <div class="top-bar-right">
+                    <div class="search-wrapper">
+                        <svg class="search-icon" viewBox="0 0 24 24" fill="none" xmlns="images/검색.svg">
+                            <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <input type="text" class="search-input" placeholder="도안 이름이나 작가로 검색하세요">
+                    </div>
+                    <img src="images/알림.svg" alt="알림" class="notification-icon">
+                    <div class="account-wrapper">
+                        <div class="avatar" style="background-image: url('images/프로필사진.png');"></div>
+                        <span class="account-text">수민 님</span>
+                    </div>
+                </div>
+            </header>
+
+            <main class="content-body">
+                
+                <h2 class="page-title">수강중인 도안 커리큘럼</h2>
+
+                <!-- 추후 JSON 데이터로 대체 예정 -->
+                <section id="dashboard" class="dashboard-section">
+                    <div class="dashboard-grid">
+                        
+                        <div class="card profile-card">
+                            <img src="images/도안1.jpg" alt="수강중인 도안" class="dashboard-img">
+                        </div>
+
+                        <div class="card curriculum-card">
+                            <h3>커리큘럼</h3>
+                            <table class="curriculum-table">
+                                <thead>
+                                    <tr>
+                                        <th>순서</th>
+                                        <th>강좌</th>
+                                        <th>수강 여부</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td class="num">01</td><td class="title">기본 코잡기</td><td class="status complete">완료</td></tr>
+                                    <tr><td class="num">02</td><td class="title">겉뜨기</td><td class="status complete">완료</td></tr>
+                                    <tr><td class="num">03</td><td class="title">안뜨기</td><td class="status complete">완료</td></tr>
+                                    <tr><td class="num">04</td><td class="title">메리야스 뜨기</td><td class="status ing">수강중</td></tr>
+                                    <tr><td class="num">05</td><td class="title">소매 분리하기</td><td class="status incomplete">미완료</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="card progress-card">
+                            <h3>진도율</h3>
+                            <div class="chart-container">
+                                <div class="pie-chart"></div>
+                                <div class="chart-legend">
+                                    <span class="legend-item"><span class="color-box complete-bg"></span>완료</span>
+                                    <span class="legend-item"><span class="color-box ing-bg"></span>수강중</span>
+                                    <span class="legend-item"><span class="color-box incomplete-bg"></span>미수강</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="search-results" class="search-results-section" style="display: none;">
+                    <div class="section-header">
+                        <h3 class="section-title">검색 결과</h3>
+                        <button id="clear-search" class="clear-search-btn">닫기</button>
+                    </div>
+                    <div id="search-grid" class="explore-grid"></div>
+                </section>
+
+                <section class="explore-section">
+                    <div class="section-header">
+                        <h3 class="section-title">새로 등록된 도안</h3>
+                        <a href="#" class="view-all">모두 보기</a>
+                    </div>
+                    
+                    <div class="explore-grid">
+                        <div class="card explore-card">
+                            <div class="thumbnail-wrapper">
+                                <img src="images/도안2.jpg" alt="도안2" class="thumbnail-img">
+                            </div>
+                        </div>
+
+                        <div class="card explore-card">
+                            <div class="thumbnail-wrapper">
+                                <img src="images/도안3.jpg" alt="도안3" class="thumbnail-img">
+                            </div>
+                        </div>
+
+                        <div class="card explore-card">
+                            <div class="thumbnail-wrapper">
+                                <img src="images/도안4.jpg" alt="도안4" class="thumbnail-img">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // 전역 변수
+        let allPatterns = [];
+
+        // JSON 데이터 로드
+        async function loadPatternData() {
+            try {
+                const response = await fetch('data.json');
+                const data = await response.json();
+                allPatterns = data.patterns;
+            } catch (error) {
+                console.error('데이터 로드 실패:', error);
+            }
+        }
+
+        // 검색 기능
+        function performSearch(query) {
+            if (!query.trim()) {
+                document.getElementById('search-results').style.display = 'none';
+                document.getElementById('dashboard').style.display = 'block';
+                document.querySelector('.page-title').style.display = 'block';
+                document.querySelector('.explore-section').style.display = 'block';
+                return;
+            }
+
+            const searchLower = query.toLowerCase();
+            const results = allPatterns.filter(pattern => 
+                pattern.name.toLowerCase().includes(searchLower) ||
+                pattern.author.toLowerCase().includes(searchLower) ||
+                pattern.category.toLowerCase().includes(searchLower)
+            );
+
+            // 대시보드즜 새로 등록된 도안 센션 숨기기
+            document.getElementById('dashboard').style.display = 'none';
+            document.querySelector('.page-title').style.display = 'none';
+            document.querySelector('.explore-section').style.display = 'none';
+
+            // 검색 결과 표시
+            const searchGrid = document.getElementById('search-grid');
+            searchGrid.innerHTML = '';
+
+            if (results.length === 0) {
+                searchGrid.innerHTML = '<p style="grid-column: 1 / -1; padding: 40px; text-align: center; color: #999;">검색 결과가 없습니다.</p>';
+            } else {
+                results.forEach(pattern => {
+                    const card = document.createElement('div');
+                    card.className = 'card explore-card';
+                    card.innerHTML = `
+                        <div class="thumbnail-wrapper">
+                            <img src="${pattern.image}" alt="${pattern.name}" class="thumbnail-img">
+                        </div>
+                        <div class="pattern-info">
+                            <h4 class="pattern-name">${pattern.name}</h4>
+                            <p class="pattern-author">${pattern.author}</p>
+                            <span class="pattern-category">${pattern.category}</span>
+                        </div>
+                    `;
+                    searchGrid.appendChild(card);
+                });
+            }
+
+            document.getElementById('search-results').style.display = 'block';
+        }
+
+        // 검색 초기화
+        function clearSearch() {
+            const searchInput = document.querySelector('.search-input');
+            searchInput.value = '';
+            document.getElementById('search-results').style.display = 'none';
+            document.getElementById('dashboard').style.display = 'block';
+            document.querySelector('.page-title').style.display = 'block';
+            document.querySelector('.explore-section').style.display = 'block';
+        }
+
+        // 이벤트 리스너 등록
+        document.addEventListener('DOMContentLoaded', async function() {
+            // 데이터 로드
+            await loadPatternData();
+
+            // 검색 입력 이벤트
+            const searchInput = document.querySelector('.search-input');
+            searchInput.addEventListener('input', (e) => {
+                performSearch(e.target.value);
+            });
+
+            // 검색 결과 닫기 버튼
+            const clearBtn = document.getElementById('clear-search');
+            clearBtn.addEventListener('click', clearSearch);
+
+            // 사이드바 메뉴 클릭
+            document.querySelectorAll('.sidebar-nav li').forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault(); 
+                    
+                    document.querySelectorAll('.sidebar-nav li').forEach(li => {
+                        li.classList.remove('active');
+                    });
+                    
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
