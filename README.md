@@ -6,6 +6,8 @@
 
 **Knitching**은 대바늘, 코바늘 등 다양한 뜨개질 도안을 검색하고 학습할 수 있는 인터랙티브한 웹 애플리케이션입니다.
 
+임시 배포 링크 : https://sumink03.github.io/douzone2026_prototype/
+
 > 💡 이 프로젝트는 **React 구현 전 프로토타입**입니다.  
 > 현재 **Vanilla HTML/CSS/JavaScript**로 구현되었으며, 추후 React로 마이그레이션될 예정입니다.
 
